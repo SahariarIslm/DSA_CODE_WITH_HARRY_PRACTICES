@@ -11,7 +11,7 @@ void linkedListTraversal(struct Node* ptr){
         ptr = ptr->next;
     }
 }
-// insertAtFirst Node
+// Case1: insertAtFirst Node(O(1))
 struct Node * insertAtFirst(struct Node *head,int data){
     struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
     ptr->data=data;
@@ -19,6 +19,7 @@ struct Node * insertAtFirst(struct Node *head,int data){
     ptr->next=head;
     return ptr;
 }
+// Case2: insertAtIndex(O(n))
 struct Node * insertAtIndex(struct Node *head,int data,int index){
     // new pointer/node in HEAP memory
     struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
@@ -36,6 +37,7 @@ struct Node * insertAtIndex(struct Node *head,int data,int index){
     p->next = ptr;
     return head;
 }
+// Case3: insertAtEnd(O(n))
 struct Node * insertAtEnd(struct Node *head,int data){
     // new pointer/node in HEAP memory
     struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
@@ -48,7 +50,7 @@ struct Node * insertAtEnd(struct Node *head,int data){
     ptr->next = NULL;
     return head;
 }
-
+// Case4: insertAfterANode(O(1))
 struct Node * insertAfterANode(struct Node *head,struct Node *prevNode,int data){
     // new pointer/node in HEAP memory
     struct Node * ptr = (struct Node *)malloc(sizeof(struct Node));
